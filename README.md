@@ -4,13 +4,13 @@
 ## Input Text
 - Activity search input is a text type. 
 - I put in a name for accessibilty users. 
-- A placeholder of a starter activity is displayed on page load until the user inputs different data. 
-
-## Select Menu
-- Two dropdown menus on this page.
+- A placeholder of a starter activity 'i.e. Go for a walk' is displayed on page load until the user inputs different data. 
 ### Participants Select
-- A select type menu with the number of participant from 1-5. 
-- The default option for this menu is "any"
+- User can input number of participants for activity search.
+- A placeholder of i.e. any is displayed on page load until the user inputs different data. 
+## Select Menu
+- One dropdown menu on this page.
+
 ### Type Select
 - A select type menu used for an activity type selection.
 - This menu includes "cooking, education, social, recreational, busywork, charity, relaxation, diy and music" types for generating activities. 
