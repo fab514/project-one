@@ -5,7 +5,7 @@
 - There are source links for the two other html files in this website.
 ## Input Text
 - Activity search input is a text type. 
-- I put in a name for accessibilty users. 
+- I put in a name="activity" for accessibilty users. 
 - A placeholder of a starter activity 'i.e. Go for a walk' is displayed on page load until the user inputs different data. 
 ## Participants Number Select
 - User can input number of participants for activity search.
