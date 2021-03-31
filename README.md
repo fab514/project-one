@@ -1,6 +1,32 @@
-# project-one
+# Project One
+## INDEX.HTML
+### Header
+- Title above the input text. Shows the name of the activity search engine. 
+#### Nav Element
+- Used a unordered list in navigation because there is no link order required.
+- HTML file source links to navigate to the activity.html and quiz.html files.
+- Putting the source links into a nav element will give better accessibility to the site. 
+### Main
+#### Input Text
+- Activity search is put inside a label element
+- Activity search input is a text type.
+- For accessibilty users a name="activity" is added to the Activity Search input. 
+- A placeholder of a starter activity 'i.e. Go for a walk' is displayed on page load until the user inputs different data. 
+#### Participants Number Select
+- Participants is put inside a label element
+- User can input number of participants for activity search.
+- The future functionality in the number select minimum number of 1. 
 
-## index.HTML
+#### Type Select
+- Activity type is put inside a label element
+- There is a drop down menu with different activity type choices that the user can select. 
+- This menu includes "cooking, education, social, recreational, busywork, charity, relaxation, diy and music" types for generating activities. 
+- This drop menu of a default option of "any"
+
+#### Buttons
+- Two buttons on this page. 
+- When there is at least one set of criteria in the input box or the drop menus, the search button can be selected. 
+- The lucky button can be selected at any time to generate one random activity not using any search criteria. 
 
 ## API Descisions
 ### Bored API
