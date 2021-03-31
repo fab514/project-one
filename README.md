@@ -5,8 +5,8 @@
 ## API Descisions
 ### Bored API
 - Bored API - https://www.boredapi.com/api/activity
-- This API was chosen for it's random activity generator. 
-- This API provides number of people, cost, and type data that I can call upon to generate certain activities.
+- This API was chosen for its random activity generator. 
+- This API provides number of people and type data that can be call upon to generate certain activities. If the user puts in a data of 1 person may come up with the activity "Work on a puzzle". A user can call a certain type of activity such as music it would come up with activities such as "Learn to play an instrument"
 
 ### Imgflip API
 Imgflip API - https://api.imgflip.com/get_memes
