@@ -15,7 +15,7 @@
 #### Participants Number Select
 - Participants is put inside a label element
 - User can input number of participants for activity search.
-- The future functionality in the number select minimum number of 1. 
+- In the participants input a min of 1 and a max of 100 participant was added. 
 
 #### Type Select
 - Activity type is put inside a label element
