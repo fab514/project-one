@@ -19,42 +19,46 @@
         </nav>
     </header>
     <main role="main">
-        <div>
-            <h2>Do You Want to Do Something?</h2>
-            <label>
-                Activity Search
-                <input type="text" name="activity" placeholder="i.e. Go for a walk">
-            </label>
-        </div>
-        <div>
-            <label>
-                Participants
-                <input class="participants" type="number" name="participants" value="1" min="1" max="100">
-            </label>
-        </div>
-        <div>
-            <label>
-                Activity Type
-                <select name="activity type">
-                    <option value="type">any</option>
-                    <option value="cooking">Cooking</option>
-                    <option value="education">Education</option>
-                    <option value="social">Social</option>
-                    <option value="recreational">Recreational</option>
-                    <option value="busywork">Busywork</option>
-                    <option value="charity">Charity</option>
-                    <option value="relaxation">Relaxation</option>
-                    <option value="diy">DIY</option>
-                    <option value="music">Music</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <button class="searchButton">Search</button>
-        </div>
-        <div>
-            <button class="luckyButton">Lucky</button>
-        </div>
+
+
+        <h2>Do You Want to Do Something?</h2>
+        <form class="input">
+            <div>
+                <label>
+                    Activity Search
+                    <input type="text" name="searchBox" placeholder="i.e. Go for a walk">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Participants
+                    <input type="number" name="participants" value="1" min="1" max="100">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Activity Type
+                    <select name="type">
+                        <option value="type">any</option>
+                        <option value="cooking">Cooking</option>
+                        <option value="education">Education</option>
+                        <option value="social">Social</option>
+                        <option value="recreational">Recreational</option>
+                        <option value="busywork">Busywork</option>
+                        <option value="charity">Charity</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="diy">DIY</option>
+                        <option value="music">Music</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <button class="searchButton">Search</button>
+            </div>
+            <div>
+                <button class="luckyButton">Lucky</button>
+            </div>
+        </form>
     </main>
     <script type="text/javascript" src="./index.js"></script>
 </body>
