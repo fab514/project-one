@@ -3,8 +3,6 @@
 
 // VARIABLES
 const activityInput = document.querySelector('.input');
-const searchButton = document.querySelector('.searchButton');
 
-activityInput.addEventListener('submit', handleSubmit);
 
 
