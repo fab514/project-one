@@ -1,16 +1,13 @@
-// Goal: Turn fetched information from the Bored API in an activityPromise
+// Goal: Create an error handler so it can be used to find any errors in transferred api data.
 //  We are going to sort this file by variables, functions and execution
 
 // VARIABLES
-const endpoint = 'https://www.boredapi.com/api';
 
 // FUNCTIONS
 
-// EXECUTION
+function handleError(err) {
+    console.log('Whats that?');
+    console.log(err);
+}
 
-const activityPromise = fetch(endpoint);
-activityPromise.then(response => {
-        return response.json();
-}).then(data => {
-        console.log(data);
-})
+// EXECUTION
