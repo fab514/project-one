@@ -1,4 +1,4 @@
-// Goal: Call the form in HTML 
+// Goal: Create a button event that when clicked the information will be shown in the console. 
 //  We are going to sort this file by variables, functions and execution
 
 // VARIABLES
@@ -10,8 +10,6 @@ const searchButton = document.querySelector('.searchButton');
 function handleSubmit(e) {
     e.preventDefault();
     console.log('submitted!');
-    const { bored } = fetchActivity();
-    console.log(bored);
     const searchBoxInput = e.currentTarget.searchBox.value
     console.log(searchBoxInput);
     const participantInput = e.currentTarget.participants.value
@@ -19,10 +17,6 @@ function handleSubmit(e) {
     const typeInput = e.currentTarget.type.value
     console.log(typeInput);
 
-}
-function handleError(err) {
-    console.log('Whats that?');
-    console.log(err);
 }
 
 // Execution
