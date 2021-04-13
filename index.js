@@ -23,7 +23,7 @@ function handleSubmit(e) {
 
 async function fetchActivity() {
     const response = await fetch(endpoint);
-    const activity = response.json();
+    const activity = response.data;
     console.log(activity);
 }
 // Execution
