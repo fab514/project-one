@@ -1,5 +1,5 @@
 
-// Goal: Create a function that calls the bored api on button click
+// Goal: Attach the fetchActivity function to the handleClick so bored api will be activated on button click
 //  We are going to sort this file by variables, functions and execution
 
 // VARIABLES
@@ -12,6 +12,8 @@ const searchButton = document.querySelector('.searchButton');
 function handleSubmit(e) {
     e.preventDefault();
     console.log('submitted!');
+    const bored = await fetchActivity();
+    console.log('bored', bored);
     const searchBoxInput = e.currentTarget.searchBox.value
     console.log(searchBoxInput);
     const participantInput = e.currentTarget.participants.value
