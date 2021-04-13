@@ -9,17 +9,17 @@ const searchButton = document.querySelector('.searchButton');
 
 // FUNCTIONS
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
     e.preventDefault();
     console.log('submitted!');
-    const bored = await fetchActivity();
-    console.log('bored', bored);
     const searchBoxInput = e.currentTarget.searchBox.value
     console.log(searchBoxInput);
     const participantInput = e.currentTarget.participants.value
     console.log(participantInput);
     const typeInput = e.currentTarget.type.value
     console.log(typeInput);
+    const bored = await fetchActivity();
+    console.log('bored', bored);
 }
 
 async function fetchActivity() {
