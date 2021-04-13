@@ -20,7 +20,6 @@ function handleSubmit(e) {
     console.log(participantInput);
     const typeInput = e.currentTarget.type.value
     console.log(typeInput);
-    fetchActivity();
 }
 
 async function fetchActivity() {
