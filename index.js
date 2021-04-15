@@ -22,10 +22,18 @@ async function handleSubmit(e) {
     console.log('bored', bored);
 }
 
+
 async function fetchActivity() {
-    const response = await fetch(endpoint);
-    const activity = response.data;
-    console.log(activity);
+    let response;
+    let activity;
+    try {
+      response = await fetch(endpoint); 
+      activity = await response.json(); 
+      console.log('activity', activity);
+    } catch(error) {
+        console.error('error', error);
+    }
+    return activity;
 }
 // Execution
 activityInput.addEventListener('submit', handleSubmit);
