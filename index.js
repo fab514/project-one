@@ -61,7 +61,7 @@ async function fetchActivity(fetchQueryEndpoint) {
       activity = await response.json(); 
       console.log('activity', activity);
     } catch(error) {
-        console.error('error', error);
+      console.error('error', error);
     }
     return activity;
     
