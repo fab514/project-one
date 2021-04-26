@@ -1,4 +1,3 @@
-
 // Goal: Attach the fetchActivity function to the handleClick so bored api will be activated on button click
 //  We are going to sort this file by variables, functions and execution
 
@@ -8,6 +7,12 @@ const activityInput = document.querySelector('.input');
 const searchButton = document.querySelector('.searchButton');
 
 // FUNCTIONS
+function inputQuery (inputArray) {
+    return inputArray
+        .filter((input) => input !== "")
+        .map((input, index) => (index === 0 ? `?${input}` : `&${input}`)) 
+        .join("");
+}
 
 async function handleSubmit(e) {
     e.preventDefault();
@@ -22,32 +27,13 @@ async function handleSubmit(e) {
     const typeQuery = typeInput !== '' ? `type=${typeInput}` : '';
     console.log('typeQuery:', typeQuery);
 
-    let constructedQuery = '';
-    switch (true) {
-        case Boolean(participantQuery && !typeQuery):
-            constructedQuery = `?${participantQuery}`
-            break;
-        case Boolean(participantQuery && typeQuery):
-            constructedQuery = `?${participantQuery}&${typeQuery}`;
-            break;
-        case Boolean(!participantQuery && typeQuery):
-            constructedQuery = `?${typeQuery}`;
-            break
-        case Boolean(!participantQuery && !typeQuery):
-            console.log('No queries were filled out');
-            constructedQuery = '';
-            break
-        default: 
-            console.log('None of the cases in the switch statement matched. Running with a empty query')
-            constructedQuery='';
-            break
-    }
+    const constructedQuery = inputQuery([participantQuery, typeQuery]);
+    
     const queryEndpoint = `${baseEndpoint}${constructedQuery}`;
     
     const bored = await fetchActivity(queryEndpoint);
     console.log('bored', bored);
 }
-
 
 async function fetchActivity(fetchQueryEndpoint) {
     let response;
