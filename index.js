@@ -33,6 +33,8 @@ async function handleSubmit(e) {
     
     const bored = await fetchActivity(queryEndpoint);
     console.log('bored', bored);
+
+    localStorage.setItem('query', JSON.stringify(bored));
 }
 
 async function fetchActivity(fetchQueryEndpoint) {
