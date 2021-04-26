@@ -27,26 +27,7 @@ async function handleSubmit(e) {
     const typeQuery = typeInput !== '' ? `type=${typeInput}` : '';
     console.log('typeQuery:', typeQuery);
 
-    let constructedQuery = '';
-    switch (true) {
-        case Boolean(participantQuery && !typeQuery):
-            constructedQuery = `?${participantQuery}`
-            break;
-        case Boolean(participantQuery && typeQuery):
-            constructedQuery = `?${participantQuery}&${typeQuery}`;
-            break;
-        case Boolean(!participantQuery && typeQuery):
-            constructedQuery = `?${typeQuery}`;
-            break
-        case Boolean(!participantQuery && !typeQuery):
-            console.log('No queries were filled out');
-            constructedQuery = '';
-            break
-        default: 
-            console.log('None of the cases in the switch statement matched. Running with a empty query')
-            constructedQuery='';
-            break
-    }
+    const constructedQuery = inputQuery([participantQuery, typeQuery]);
     
     const queryEndpoint = `${baseEndpoint}${constructedQuery}`;
     
