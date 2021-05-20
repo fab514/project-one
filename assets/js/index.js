@@ -78,4 +78,3 @@ async function fetchActivity(fetchQueryEndpoint) {
 }
 // Execution
 activityInput.addEventListener('submit', handleSubmit);
-
