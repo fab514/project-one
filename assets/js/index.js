@@ -1,4 +1,3 @@
-// Goal: Attach the fetchActivity function to the handleClick so bored api will be activated on button click
 //  We are going to sort this file by variables, functions and execution
 
 // VARIABLES
