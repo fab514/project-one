@@ -35,34 +35,29 @@ const atHomeActiveResults = [
   'Set traps to get rid of burglers',
 ]
 
-// TODO: Add a question for home or public
-
-// const indoorPublicRelaxingResults = [
-//   'Try Out a New Restaurant',
-//   'Find an Antique or Thrift Shop',
-//   'Find a local Coffee Shop or Bakery',
-//   'I\'ll take you to the Candy Shop',
-//   'Take up a Photography Hobby',
-//   'Search a Record Store',
-//   'Perform at an Open Mic night or Karaoke',
-//   'Play Games at an Arcade',
-//   'See a Movie at the Theatre',
-//   'Go see a Comedian',
-//   'Go on a Dinner cruize',
-//   'Join a Trivia Night',
-// ]
-
-// const indoorPublicActiveResults = [
-//   'Community Volunteer',
-//   'Grocery Shopping',
-//   'Shopping Scavenger Hunt',
-//   'Join a Dance Class',
-//   'Play Pool or go Bowling',
-//   'Visit an Aquarium or Museum',
-//   'Go to a Live Concert',
-//   'Throw a Photo Shoot',
-//   'Go to the Gym' 
-// ]
+const indoorPublicResults = [
+  'Try Out a New Restaurant',
+  'Find an Antique or Thrift Shop',
+  'Find a local Coffee Shop or Bakery',
+  'I\'ll take you to the Candy Shop',
+  'Take up a Photography Hobby',
+  'Search a Record Store',
+  'Perform at an Open Mic night or Karaoke',
+  'Play Games at an Arcade',
+  'See a Movie at the Theatre',
+  'Go see a Comedian',
+  'Go on a Dinner cruize',
+  'Join a Trivia Night',
+  'Community Volunteer',
+  'Grocery Shopping',
+  'Shopping Scavenger Hunt',
+  'Join a Dance Class',
+  'Play Pool or go Bowling',
+  'Visit an Aquarium or Museum',
+  'Go to a Live Concert',
+  'Throw a Photo Shoot',
+  'Go to the Gym' 
+]
 
 const natureResults = [
   'Watch the Sunrise/ or Sunset',
@@ -127,7 +122,6 @@ function showTextNode(textNodeIndex) {
   })
 }
 
-// Choose a random section of the result arrays
 function randomItemFromArray(arr, not) {
   const item = arr[Math.floor(Math.random() * arr.length)];
   if (item === not) {
@@ -161,7 +155,6 @@ function selectAnswer(answerObject) {
 }
 
 function findResult(array) {
-  console.log('array', array);
   return randomItemFromArray(array);
 }
 
@@ -183,8 +176,6 @@ function generateMemeHtml(giphyResponse) {
     gifFigure.appendChild(gifFigCaption);
     gif.appendChild(gifFigure);
 }
-
-
 
 const textNodes = [
   {
@@ -227,41 +218,51 @@ const textNodes = [
     answers: [
       {
         answer: 'Indoor',
-        nextText: 5,
+        nextText: 4,
       },
       {
         answer: 'Outdoor',
-        nextText: 4
+        nextText: 5
       },
     ]
   },
 
-  // Add home or public question
-
   {
     id: 4,
-    question: 'Out in Nature or an Outdoor Activity?',
+    question: 'Would you like to stay at home or go out?',
     answers: [
       {
-        answer: 'Spending time with nature!',
-        // this answer goes to natureResults array
-        nextText: natureResults
+        answer: 'I want to stay at home!',
+        nextText: 6,
       },
       {
-        answer: 'Active outdoor activity please!',
-        // this answer goes to outdoorActivityResults array
-        nextText: outdoorActivityResults
+        answer: 'Spend the night on the Town!',
+        nextText: indoorPublicResults
       },
     ]
   },
 
   {
     id: 5,
+    question: 'Out in Nature or an Outdoor Activity?',
+    answers: [
+      {
+        answer: 'Spending time with nature!',
+        nextText: natureResults
+      },
+      {
+        answer: 'Active outdoor activity please!',
+        nextText: outdoorActivityResults
+      },
+    ]
+  },
+
+  {
+    id: 6,
     question: 'An Active or Relaxing Activity?',
     answers: [
       {
         answer: 'I like being Active Indoors!',
-        // this answer goes to atHomeResults array 
         nextText: atHomeActiveResults
       },
       {
@@ -271,11 +272,7 @@ const textNodes = [
     ]
   }
 ]
-console.log('textNodes', textNodes);
 
 startQuiz();
 
-
-
 let returnActivity = randomItemFromArray(atHomeRelaxedResults);
-console.log('returnActivity', returnActivity);
