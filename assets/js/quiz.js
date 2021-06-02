@@ -132,8 +132,6 @@ function randomItemFromArray(arr, not) {
 }
 
 function renderResult(resultsId) {
-  console.log('resultsId', resultsId);
-  console.log('renderResult', findResult(resultsId))
   while (containerElement.firstChild) {
     containerElement.removeChild(containerElement.firstChild)
   }
@@ -145,7 +143,7 @@ function renderResult(resultsId) {
   againButton.onclick = function () {
     window.location.reload()
   }
-  const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}`;
+  const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}&rating=g`;
   containerElement.appendChild(createResults)
   containerElement.appendChild(againButton)
   fetchGiphy(path);
@@ -167,13 +165,14 @@ function findResult(array) {
 async function fetchGiphy(url) {
   const res = await fetch(url)
   const data = await res.json();
-  generateMemeHtml(data);
+  const randomGif = randomItemFromArray(data.data)
+  generateMemeHtml(randomGif);
 }
 
-function generateMemeHtml(giphyResponse) {
+function generateMemeHtml(randomGif) {
   const gif = document.querySelector('.container')
   const gifImage = document.createElement('img');
-  gifImage.src = giphyResponse.data[1].images.original.url;
+  gifImage.src = randomGif.images.original.url;
   gifImage.alt = 'gif'
   const gifFigure = document.createElement('figure');
   const gifFigCaption = document.createElement('figcaption');
@@ -280,5 +279,3 @@ const textNodes = [
 ]
 
 startQuiz();
-
-let returnActivity = randomItemFromArray(atHomeRelaxedResults);
