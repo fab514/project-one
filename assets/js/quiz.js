@@ -56,7 +56,7 @@ const indoorPublicResults = [
   'Visit an Aquarium or Museum',
   'Go to a Live Concert',
   'Throw a Photo Shoot',
-  'Go to the Gym' 
+  'Go to the Gym'
 ]
 
 const natureResults = [
@@ -139,9 +139,15 @@ function renderResult(resultsId) {
   }
   const whatYouWantToDo = findResult(resultsId)
   const createResults = document.createElement('p')
-  createResults.innerText= whatYouWantToDo
+  createResults.innerText = whatYouWantToDo
+  const againButton = document.createElement('button')
+  againButton.innerHTML = "Again?";
+  againButton.onclick = function () {
+    window.location.reload()
+  }
   const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}`;
   containerElement.appendChild(createResults)
+  containerElement.appendChild(againButton)
   fetchGiphy(path);
 }
 
@@ -159,22 +165,22 @@ function findResult(array) {
 }
 
 async function fetchGiphy(url) {
-    const res = await fetch(url)
-    const data = await res.json();
-    generateMemeHtml(data);
+  const res = await fetch(url)
+  const data = await res.json();
+  generateMemeHtml(data);
 }
 
 function generateMemeHtml(giphyResponse) {
-    const gif = document.querySelector('.container')
-    const gifImage = document.createElement('img');
-    gifImage.src = giphyResponse.data[0].images.original.url; 
-    gifImage.alt = 'gif'
-    const gifFigure = document.createElement('figure');
-    const gifFigCaption = document.createElement('figcaption');
-    gifFigCaption.textContent = 'Powered By Giphy';
-    gifFigure.appendChild(gifImage);
-    gifFigure.appendChild(gifFigCaption);
-    gif.appendChild(gifFigure);
+  const gif = document.querySelector('.container')
+  const gifImage = document.createElement('img');
+  gifImage.src = giphyResponse.data[1].images.original.url;
+  gifImage.alt = 'gif'
+  const gifFigure = document.createElement('figure');
+  const gifFigCaption = document.createElement('figcaption');
+  gifFigCaption.textContent = 'Powered By Giphy';
+  gifFigure.appendChild(gifImage);
+  gifFigure.appendChild(gifFigCaption);
+  gif.appendChild(gifFigure);
 }
 
 const textNodes = [

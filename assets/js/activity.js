@@ -48,7 +48,6 @@ const html = `
         <p>Type: ${capitalizeWords(storageObject.type)}</p>
         <p>Participants: ${storageObject.participants}</p>
         <a href="./index.html">Try Again</a>
-
     </div>
 `;
 console.log('html', html);
