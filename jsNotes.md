@@ -38,3 +38,9 @@ Bored API
 - bring back removeChildNode function to remove the Activity Container when the Try again button has been clicked
 ## Adjust HTML for activity page
 - Create a button that will return you to the homepage
+
+
+## Quiz Page TODO
+- Grab random item from the giphyArray using randomItemFromArray function
+- Filter out the activities better for groups. 
+- Research how to make the gif api age appropriate. 
