@@ -1,3 +1,4 @@
+import { randomItemFromArray } from './randomItem.js'
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const containerElement = document.querySelector('.container')
@@ -873,16 +874,6 @@ function showTextNode(textNodeIndex) {
       answerButtonsElement.appendChild(button)
     }
   })
-}
-
-
-function randomItemFromArray(arr, not) {
-  const item = arr[Math.floor(Math.random() * arr.length)];
-  if (item === not) {
-    console.log('Ahh we used that one last time, look again');
-    return randomItemFromArray(arr, not);
-  }
-  return item;
 }
 
 function renderResult(resultsId) {
