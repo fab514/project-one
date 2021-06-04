@@ -6,18 +6,24 @@ const containerElement = document.querySelector('.container')
 const apiKey = 'fM2ZjlMUQUm5t6tgHe3IyQYj9Q5NHDPs';
 
 let resultArray = quizResults
+console.log('resultArray', resultArray)
 
 function startQuiz() {
   showTextNode(1)
 }
 
+// TODO: put removeChildNodes function into a module
+function removeChildNodes(node) {
+  while (node.firstChild) {
+    node.removeChild(node.firstChild)
+  }
+}
+
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-
+  removeChildNodes(answerButtonsElement)
   questionElement.innerText = textNode.question
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
+  
   textNode.answers.forEach(answerObject => {
     if (answerObject) {
       const button = document.createElement('button')
@@ -30,20 +36,22 @@ function showTextNode(textNodeIndex) {
 }
 
 function renderResult(resultsId) {
-  while (containerElement.firstChild) {
-    containerElement.removeChild(containerElement.firstChild)
-  }
+  removeChildNodes(containerElement)
   const whatYouWantToDo = findResult(resultsId)
   const createResults = document.createElement('p')
-  createResults.innerText = whatYouWantToDo
+  createResults.textContent = whatYouWantToDo
   const againButton = document.createElement('button')
-  againButton.innerHTML = "Again?";
+  againButton.textContent = "Again?";
   againButton.onclick = function () {
     window.location.reload()
   }
+  const viewAllButton = document.createElement('button')
+  viewAllButton.textContent = "View All Results"
+  viewAllButton.addEventListener('click', () => showAll(quizResults))
   const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}&rating=g`;
   containerElement.appendChild(createResults)
   containerElement.appendChild(againButton)
+  containerElement.appendChild(viewAllButton)
   fetchGiphy(path);
 }
 
@@ -56,6 +64,32 @@ function selectAnswer(answerObject) {
   } else {
     renderResult(resultArray.map(remainingItems => remainingItems.name))
   }
+}
+
+function showAll(allResults) {
+  let hi = allResults.map(result => result.name)
+  const listOfResults = document.createElement('ul')
+  hi.forEach(resultName => {
+    const individualResult = document.createElement('li')
+    individualResult.textContent = resultName
+    listOfResults.appendChild(individualResult)
+    return
+  })
+  console.log('hi', hi)
+  const viewAllResults = document.createElement('section')
+  viewAllResults.id = 'res'
+  const destroyButton = document.createElement('button')
+  destroyButton.textContent = 'Destroy List'
+  destroyButton.addEventListener('click', () => destroyResultsList())
+  viewAllResults.appendChild(listOfResults)
+  viewAllResults.appendChild(destroyButton)
+  containerElement.appendChild(viewAllResults)
+}
+
+function destroyResultsList() {
+  const allId = document.getElementById('res')
+  allId.remove()
+
 }
 
 function findResult(array) {
