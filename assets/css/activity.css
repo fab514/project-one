@@ -1,8 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 body{
     background-color:rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: normal;
     font-size: 16px;
+    overflow: hidden;
 }
 
 .header {
@@ -21,18 +28,47 @@ body{
 nav {
     background-color: #f0ffff;
 }
-
-.links {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    padding: 0;
+  
+body {
+  overflow: hidden;
 }
-
+  
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  list-style: none;
+}
+  
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: #363698;
+  font-family: "Martel", serif;
+  font-size: 1.2rem;
+}
+  
+li {
+  position: relative;
 }
 
-a:hover {
-    background-color: #C0FEFE;
+li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  bottom: -2px;
+  /* controls color of the underline */
+  background-color: rgb(68, 18, 81);
+  transition: 0.3s ease;
+  /* Makes sure no black spots are left */
+  overflow: hidden;
+  /* Makes sure no black spots are left */
+}
+  
+li a:hover::after {
+  width: 100%;
+  left: 0;
 }
