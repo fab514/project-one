@@ -3,34 +3,36 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: normal;
     font-size: 16px;
-    line-height: 1.2em;
-    margin: 0;
-}
-.header {
-    padding: 20px;
-    text-align: center;
-    background-color: rgb(105, 139, 169);
-    font-size: 30px;
-    height: 120px;
-}
-.textheader {
-    position:relative; top:-20px;
-    color:black;
-    margin-top: 55px;
-    margin-bottom: -10px;
 }
 
-/* .links ul{
-    margin: 0;
-    padding: 0;
-    list-style: none; 
-    padding-left: 75px;
-} */
-.links li{
-    display: inline;
-    position: relative;
-    padding-left: 50px;
+.header {
+    font-size: 17px;
     text-align: center;
-    font-weight: lighter;
-    font-size:initial
+    background-color: rgb(105, 139, 169);
+    padding-top: 15px;
+}
+
+.header > h1 {
+    font-family: 'Martel', serif;
+    font-size: 30px;
+    margin: 0;
+}
+
+nav {
+    background-color: #f0ffff;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #C0FEFE;
 }
