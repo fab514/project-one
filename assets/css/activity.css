@@ -9,11 +9,11 @@ body{
     font-size: 17px;
     text-align: center;
     background-color: rgb(105, 139, 169);
-    height: 93px;
     padding-top: 15px;
 }
 
 .header > h1 {
+    font-family: 'Martel', serif;
     font-size: 30px;
     margin: 0;
 }
@@ -26,7 +26,13 @@ nav {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    list-style-position: inside;
     padding: 0;
+}
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #C0FEFE;
 }
