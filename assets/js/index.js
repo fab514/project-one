@@ -38,18 +38,22 @@ async function handleSubmit(e) {
   if (bored && bored.error) {
 
     const myError = document.querySelector('.wrapper');
-
+    myError.setAttribute("style", "padding-top:30px");
     removeChildNodes(myError);
 
     const myHTML = document.createElement('h2');
     myHTML.textContent = 'Oops! No Activity Found!';
+    myHTML.style.textAlign = "center";
     myError.appendChild(myHTML);
 
     const img = document.createElement('img');
     img.src = "https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448_1280.jpg"
-    img.width = 500;
+    img.setAttribute("style", "padding-top:40px");
     img.height = 250;
     img.alt = 'question kid!';
+    img.class = 'errorImg';
+    img.style.boxSizing = 'content-box';
+    img.style.width = 100%
     myError.appendChild(img);
 
   } else {
