@@ -2,38 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
 body{
     background-color:rgb(255, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Martel', serif;
     font-weight: normal;
     font-size: 16px;
     overflow: hidden;
 }
-
-.header {
+/* header styles */
+header {
     font-size: 17px;
     text-align: center;
     background-color: rgb(105, 139, 169);
     padding-top: 15px;
 }
 
-.header > h1 {
+header > h1 {
     font-family: 'Martel', serif;
     font-size: 30px;
     margin: 0;
 }
 
-nav {
+header > nav {
     background-color: #f0ffff;
 }
   
-body {
-  overflow: hidden;
-}
-  
-ul {
+header > nav > ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -41,19 +37,19 @@ ul {
   margin: auto;
   list-style: none;
 }
-  
-a {
+   
+header > nav > ul > li {
+  position: relative;
+}
+
+header > nav > ul > li > a {
   text-decoration: none;
   color: #363698;
   font-family: "Martel", serif;
   font-size: 1.2rem;
 }
-  
-li {
-  position: relative;
-}
 
-li a::after {
+header > nav > ul > li > a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -68,7 +64,7 @@ li a::after {
   /* Makes sure no black spots are left */
 }
   
-li a:hover::after {
+header > nav > ul > li > a:hover::after {
   width: 100%;
   left: 0;
 }
