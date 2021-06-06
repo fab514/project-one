@@ -35,7 +35,7 @@ function showTextNode(textNodeIndex) {
   })
 }
 
-function renderResult(resultsId) {
+async function renderResult(resultsId) {
   removeChildNodes(containerElement)
   const whatYouWantToDo = findResult(resultsId)
   const createResults = document.createElement('p')
@@ -49,10 +49,10 @@ function renderResult(resultsId) {
   viewAllButton.textContent = "View All Results"
   viewAllButton.addEventListener('click', () => showAll(quizResults))
   const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}&rating=g`;
+  await fetchGiphy(path);
   containerElement.appendChild(createResults)
   containerElement.appendChild(againButton)
   containerElement.appendChild(viewAllButton)
-  fetchGiphy(path);
 }
 
 function selectAnswer(answerObject) {
