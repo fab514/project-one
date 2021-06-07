@@ -38,7 +38,7 @@ async function handleSubmit(e) {
   if (bored && bored.error) {
 
     const myError = document.querySelector('.wrapper');
-    myError.setAttribute("style", "padding-top:30px");
+    myError.setAttribute("style", "padding-top:7px");
     removeChildNodes(myError);
 
     const myHTML = document.createElement('h2');
@@ -48,13 +48,13 @@ async function handleSubmit(e) {
 
     const img = document.createElement('img');
     img.src = "https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448_1280.jpg"
-    img.setAttribute("style", "padding-top:40px");
+    img.setAttribute("style", "padding-top:10px");
     img.height = 250;
     img.alt = 'question kid!';
     img.class = 'errorImg';
     img.style.boxSizing = 'content-box';
-    img.style.width = 100%
-    myError.appendChild(img);
+    img.style.width = 100 %
+      myError.appendChild(img);
 
   } else {
     localStorage.setItem('bored', JSON.stringify(bored));
