@@ -44,3 +44,7 @@ Bored API
 - Grab random item from the giphyArray using randomItemFromArray function
 - Filter out the activities better for groups. 
 - Research how to make the gif api age appropriate. 
+
+## Results
+- Get rid of Spring Cleaning
+- Take up painting

@@ -104,6 +104,10 @@ input {
   border-radius: 3px;
 }
 
+.image {
+  max-height: 5%;
+}
+
 /* Select Menu */
 
 .select {
@@ -147,5 +151,12 @@ button {
 }
 
 .search {
-  padding-top: 16px;
+  padding-top: 8px;
+}
+
+.wrapper {
+  border: transparent 5px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
 }
