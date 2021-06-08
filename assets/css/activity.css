@@ -79,11 +79,15 @@ header > nav > ul > li > a:hover::after {
 .form {
   padding-top: 10px;
   padding-left: 20px;
-  font-size: large;         
+  font-size: large;      
 }
 
 .type {
-  padding-top: 10px;
+  margin-top: 15px; 
+}
+
+.participants {
+  display: block;
 }
 
 input {
@@ -111,6 +115,7 @@ input {
   background-color: #f8f8f8;
   border-radius: 3px;
   padding-left: 20px;
+  display: block;
 }
 
 option {
