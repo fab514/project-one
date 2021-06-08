@@ -43,27 +43,25 @@ async function handleSubmit(e) {
 
     const myHTML = document.createElement('h2');
     myHTML.textContent = 'Oops! No Activity Found!';
-    myHTML.style.textAlign = "center";
+    myHTML.style.textAlign = 'center';
+    myHTML.style.fontSize = '1.2rem'
     myError.appendChild(myHTML);
 
     const img = document.createElement('img');
     img.src = "https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448_1280.jpg"
-    img.setAttribute("style", "padding-top:10px");
     img.height = 250;
     img.alt = 'question kid!';
     img.class = 'errorImg';
     img.style.boxSizing = 'content-box';
-    img.style.width = 100 %
-      myError.appendChild(img);
+    img.style.width = 100%
+    myError.appendChild(img);
 
   } else {
     localStorage.setItem('bored', JSON.stringify(bored));
     window.location = './activity.html';
   }
-
-
-
 }
+
 async function fetchActivity(fetchQueryEndpoint) {
   let response;
   let activity;
