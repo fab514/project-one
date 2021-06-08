@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color:rgb(255, 255, 255);
+    background-color: #C1D5EB;
     font-family: 'Martel', serif;
     font-weight: normal;
     font-size: 16px;
@@ -40,11 +40,12 @@ header > nav > ul {
    
 header > nav > ul > li {
   position: relative;
+  line-height: initial;
 }
 
 header > nav > ul > li > a {
   text-decoration: none;
-  color: #363698;
+  color: #292995;
   font-family: "Martel", serif;
   font-size: 1.2rem;
 }
@@ -69,16 +70,31 @@ header > nav > ul > li > a:hover::after {
 /* End Header Styles */
 
 
-/* Select Menu */
 *::before,
 *::after {
   box-sizing:border-box;
 }
 
-form > div > label > select {
+/* Participants */
+.form {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: large;      
+}
+
+.type {
+  padding-top: 10px; 
+  display: block;
+}
+
+.participants {
+  display: block;
+}
+
+input {
   text-align: center;
   text-align-last: center;
-  width: 120px;
+  width: 80px;
   font-family:inherit;
   font-size: inherit;
   cursor:inherit;
@@ -86,6 +102,25 @@ form > div > label > select {
   border: 3px solid #625e93;
   background-color: #f8f8f8;
   border-radius: 3px;
+}
+
+/* Select Menu */
+
+.select {
+  width: 90px;
+  font-family:inherit;
+  font-size: medium;
+  cursor:inherit;
+  line-height: inherit;
+  border: 3px solid #625e93;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  padding-left: 20px;
+  display: block;
+}
+
+option {
+  text-align: left;
 }
 
 :root {
@@ -103,44 +138,14 @@ form > div > label > select:focus {
  border-radius: 5px;
 }
 
-/* Participants */
-.form {
-  padding-top: 50px;
+button {
+  width: 100px;
+  background-color: #3B3885;
+  line-height: 30px;
+  font-size: 20px;
+  color: #C1D5EB;
 }
 
-form > div > label {
-  padding-left: 20px;
-}
-
-.type {
-  padding-top: 30px;
-}
-
-form > div > label > input {
-  text-align: center;
-  text-align-last: center;
-  width: 80px;
-  font-family:inherit;
-  font-size: inherit;
-  cursor:inherit;
-  line-height: inherit;
-  border: 3px solid #625e93;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
-.button {
-  padding-top: 25px;
-  text-align: center;
-  padding-right: 30px;
-}
-
-:root {
-  --select-focus: rgb(210, 210, 230);
-}
-
-/* Error Image */
-.errorImg {
-  padding-top: 20px;
-  width: 100%;
+.search {
+  padding-top: 16px;
 }
