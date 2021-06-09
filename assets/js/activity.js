@@ -3,8 +3,7 @@ const apiKey = 'fM2ZjlMUQUm5t6tgHe3IyQYj9Q5NHDPs';
 const getStorage = localStorage.getItem('bored');
 const storageObject = JSON.parse(getStorage);
 const query = storageObject.activity;
-const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&rated=g`;
-const tryButton = document.querySelector('button');
+const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&rating=g`;
 const activityDisplay = document.createElement('div');
 const html = `
     <div class="cards">

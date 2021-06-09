@@ -104,10 +104,6 @@ input {
   border-radius: 3px;
 }
 
-.image {
-  max-height: 5%;
-}
-
 /* Select Menu */
 
 .select {
@@ -159,4 +155,33 @@ button {
   width: 400px;
   margin-right: auto;
   margin-left: auto;
+}
+
+/* quiz page */
+.quizButton {
+  font-size: medium;
+  width: auto;
+}
+
+.gif {
+  width: 400px;
+  height: 300px;
+  image-rendering: pixelated;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  padding-top: 5.5rem;
+  border: transparent 5px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.createResult {
+  padding-top: 18px;
 }

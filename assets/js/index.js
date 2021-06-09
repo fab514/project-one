@@ -51,7 +51,7 @@ async function handleSubmit(e) {
     img.src = "https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448_1280.jpg"
     img.height = 250;
     img.alt = 'question kid!';
-    img.class = 'errorImg';
+    img.className = 'errorImg';
     img.style.boxSizing = 'content-box';
     img.style.width = 100%
     myError.appendChild(img);
