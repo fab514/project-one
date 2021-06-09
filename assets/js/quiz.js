@@ -29,6 +29,7 @@ function showTextNode(textNodeIndex) {
       const button = document.createElement('button')
       button.innerText = answerObject.answer
       button.classList.add('btn')
+      button.className = 'quizButton'
       button.addEventListener('click', () => selectAnswer(answerObject))
       answerButtonsElement.appendChild(button)
     }
@@ -40,13 +41,16 @@ async function renderResult(resultsId) {
   const whatYouWantToDo = findResult(resultsId)
   const createResults = document.createElement('p')
   createResults.textContent = whatYouWantToDo
+  createResults.className = 'createResult'
   const againButton = document.createElement('button')
   againButton.textContent = "Again?";
+  againButton.className = 'quizButton';
   againButton.onclick = function () {
     window.location.reload()
   }
   const viewAllButton = document.createElement('button')
   viewAllButton.textContent = "View All Results"
+  viewAllButton.className = 'quizButton';
   viewAllButton.addEventListener('click', () => showAll(quizResults))
   const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${whatYouWantToDo}&rating=g`;
   await fetchGiphy(path);
@@ -72,10 +76,10 @@ function showAll(allResults) {
   hi.forEach(resultName => {
     const individualResult = document.createElement('li')
     individualResult.textContent = resultName
+    individualResult.className = 'individualResult'
     listOfResults.appendChild(individualResult)
     return
   })
-  console.log('hi', hi)
   const viewAllResults = document.createElement('section')
   viewAllResults.id = 'res'
   const destroyButton = document.createElement('button')
@@ -108,9 +112,12 @@ function generateMemeHtml(randomGif) {
   const gifImage = document.createElement('img');
   gifImage.src = randomGif.images.original.url;
   gifImage.alt = 'gif'
+  gifImage.className = 'gif'
   const gifFigure = document.createElement('figure');
   const gifFigCaption = document.createElement('figcaption');
   gifFigCaption.textContent = 'Powered By Giphy';
+  gifFigCaption.style.textAlign = 'left'
+  gifFigCaption.style.fontSize = '8px';
   gifFigure.appendChild(gifImage);
   gifFigure.appendChild(gifFigCaption);
   gif.appendChild(gifFigure);

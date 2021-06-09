@@ -310,7 +310,7 @@ export const quizResults = [
         ]
     },
     {
-        "name": "I\"ll take you to the Candy Shop",
+        "name": "I'll take you to the Candy Shop",
         "categories": [
             "Solo",
             "Duo",
