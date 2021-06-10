@@ -44,7 +44,9 @@ Bored API
 - Grab random item from the giphyArray using randomItemFromArray function
 - Filter out the activities better for groups. 
 - Research how to make the gif api age appropriate. 
+- Change the select menu width to auto to match the type text || make the select menu bigger. 
 
 ## Results
 - Get rid of Spring Cleaning
 - Take up painting
+

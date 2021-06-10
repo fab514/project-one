@@ -6,13 +6,11 @@ const containerElement = document.querySelector('.container')
 const apiKey = 'fM2ZjlMUQUm5t6tgHe3IyQYj9Q5NHDPs';
 
 let resultArray = quizResults
-console.log('resultArray', resultArray)
 
 function startQuiz() {
   showTextNode(1)
 }
 
-// TODO: put removeChildNodes function into a module
 function removeChildNodes(node) {
   while (node.firstChild) {
     node.removeChild(node.firstChild)
@@ -23,7 +21,7 @@ function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   removeChildNodes(answerButtonsElement)
   questionElement.innerText = textNode.question
-  
+
   textNode.answers.forEach(answerObject => {
     if (answerObject) {
       const button = document.createElement('button')
@@ -62,7 +60,6 @@ async function renderResult(resultsId) {
 function selectAnswer(answerObject) {
   const nextTextNodeId = answerObject.nextText
   resultArray = resultArray.filter(result => result.categories.includes(answerObject.filter))
-  console.log('resultArray', resultArray)
   if (typeof answerObject.nextText === 'number') {
     showTextNode(nextTextNodeId)
   } else {
@@ -70,30 +67,64 @@ function selectAnswer(answerObject) {
   }
 }
 
-function showAll(allResults) {
-  let hi = allResults.map(result => result.name)
-  const listOfResults = document.createElement('ul')
-  hi.forEach(resultName => {
-    const individualResult = document.createElement('li')
+function buildModal(classNm, title, arrayOfResultNames) {
+  // Create a Modal div
+  let myModal = document.createElement('div');
+  myModal.className = classNm + "_modal";
+  
+  //  Make a modal content div
+  let modalContent = document.createElement('div');
+  modalContent.className = classNm + "_modal-content";
+  myModal.appendChild(modalContent);
+
+  // Make  a Modal Header Div
+  let modalHeader = document.createElement('div');
+  modalHeader.className = classNm + "_modal-header";
+  modalContent.appendChild(modalHeader);
+
+  // Make a close modal button Destroy Button
+  let close = document.createElement('button');
+  close.className = classNm + "_close"
+  close.textContent = 'Destroy!';
+  close.addEventListener('click', () => destroyResultsList());
+  modalHeader.appendChild(close);
+
+  // Make the header content
+  let modalHeaderContent = document.createElement("h2");
+  let modalHeaderContentText = document.createTextNode(title);
+  modalHeaderContent.appendChild(modalHeaderContentText);
+  modalHeader.appendChild(modalHeaderContent);
+
+  // Make the body div
+  let modalBody = document.createElement("div");
+  modalBody.className = classNm + "_modal-body";
+  modalContent.appendChild(modalBody);
+
+  // Make the body content
+  let modalBodyContent = document.createElement("ul");
+  arrayOfResultNames.forEach(resultName => {
+    const individualResult = document.createElement('li');
     individualResult.textContent = resultName
     individualResult.className = 'individualResult'
-    listOfResults.appendChild(individualResult)
+    modalBodyContent.appendChild(individualResult)
     return
   })
-  const viewAllResults = document.createElement('section')
-  viewAllResults.id = 'res'
-  const destroyButton = document.createElement('button')
-  destroyButton.textContent = 'Destroy List'
-  destroyButton.addEventListener('click', () => destroyResultsList())
-  viewAllResults.appendChild(listOfResults)
-  viewAllResults.appendChild(destroyButton)
-  containerElement.appendChild(viewAllResults)
+
+  modalBody.appendChild(modalBodyContent)
+  document.body.appendChild(myModal);
+}
+
+function showAll(allResults) {
+  let all = allResults.map(result => result.name)
+  const listOfResults = document.createElement('ul')
+  listOfResults.className = 'viewAll'
+  buildModal('individualResult', 'View All', all) 
 }
 
 function destroyResultsList() {
-  const allId = document.getElementById('res')
+  const allId = document.querySelector('.individualResult_modal')
+  console.log('allId', allId)
   allId.remove()
-
 }
 
 function findResult(array) {
@@ -220,7 +251,7 @@ const textNodes = [
     answers: [
       {
         answer: 'I like being Active Indoors!',
-        nextText: 'result', 
+        nextText: 'result',
         filter: 'Active'
       },
       {
@@ -232,6 +263,6 @@ const textNodes = [
   }
 ]
 
-console.log('textNodes', textNodes)
+// console.log('textNodes', textNodes)
 
 startQuiz();
