@@ -201,21 +201,37 @@ button {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.individualResult_modal-body > ul {
+  list-style: none;
+  overflow: scroll;
+  height: 500px;
+}
+
 /* Modal Content/Box */
 .individualResult_modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  background-color: #C1D5EB;
+  margin: 0%; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 100%; /* Could be more or less, depending on screen size */
+  height: 100%;
+  display: flex;
+flex-direction: column;
+}
+
+.individualResult_modal-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 }
 
 /* The Close Button */
 .individualResult_close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 16px;
   font-weight: bold;
+  margin-right: 8px;
 }
 
 .individualResult-close:hover,
@@ -224,3 +240,14 @@ button {
   text-decoration: none;
   cursor: pointer;
 } 
+
+.individualResult_modal-body {
+  width: 80%;
+  align-self: center;
+  border: 2px solid darkmagenta;
+  box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+  padding: 25px;
+  box-sizing: border-box;
+  padding-bottom: 8px;
+margin-top: 16px;
+}
