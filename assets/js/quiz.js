@@ -147,7 +147,6 @@ function generateMemeHtml(randomGif) {
   const gifFigure = document.createElement('figure');
   const gifFigCaption = document.createElement('figcaption');
   gifFigCaption.textContent = 'Powered By Giphy';
-  gifFigCaption.style.textAlign = 'left'
   gifFigCaption.style.fontSize = '8px';
   gifFigure.appendChild(gifImage);
   gifFigure.appendChild(gifFigCaption);
