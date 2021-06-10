@@ -6,14 +6,14 @@ const query = storageObject.activity;
 const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&rating=g`;
 const activityDisplay = document.createElement('div');
 const html = `
-    <div class="cards">
-        <h2>${capitalizeWords(storageObject.activity)}</h2>
-        <p>Type: ${capitalizeWords(storageObject.type)}</p>
-        <p>Participants: ${storageObject.participants}</p>
-        <a href="./index.html">Try Again</a>
+    <div class="container">
+        <h2 class="createResult">${capitalizeWords(storageObject.activity)}</h2>
+        <a href="./index.html">Try Again?</a>
     </div>
 `;
+
 activityDisplay.innerHTML = html
+// activityDisplay.className = 'container'
 document.body.appendChild(activityDisplay);
 
 function capitalizeWords(words) {
@@ -31,13 +31,15 @@ async function fetchGiphy() {
 }
 
 function generateMemeHtml(randomGif) {
-    const gif = document.querySelector('.activityCards')
+    const gif = document.querySelector('.container')
     const gifImage = document.createElement('img');
     gifImage.src = randomGif.images.original.url;
     gifImage.alt = 'gif'
+    gifImage.className = 'gif'
     const gifFigure = document.createElement('figure');
     const gifFigCaption = document.createElement('figcaption');
     gifFigCaption.textContent = 'Powered By Giphy';
+    gifFigCaption.style.fontSize = '8px';
     gifFigure.appendChild(gifImage);
     gifFigure.appendChild(gifFigCaption);
     gif.appendChild(gifFigure);

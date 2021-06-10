@@ -157,7 +157,7 @@ button {
   margin-left: auto;
 }
 
-/* quiz page */
+/* quiz and activity page */
 .quizButton {
   font-size: medium;
   width: auto;
@@ -172,14 +172,20 @@ button {
 }
 
 .container {
-  padding-top: 5.5rem;
   border: transparent 5px;
-  width: 400px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   font-size: xx-large;
   font-weight: bolder;
+}
+
+.link {
+  font-size: large;
+  padding-top: 16px;
+  color:rgb(68, 18, 81);
+  text-decoration: none;
 }
 
 .createResult {
