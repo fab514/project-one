@@ -8,7 +8,7 @@ const activityDisplay = document.createElement('div');
 const html = `
     <div class="container">
         <h2 class="createResult">${capitalizeWords(storageObject.activity)}</h2>
-        <a href="./index.html">Try Again?</a>
+        <a href="./index.html" class="link">Try Again?</a>
     </div>
 `;
 
